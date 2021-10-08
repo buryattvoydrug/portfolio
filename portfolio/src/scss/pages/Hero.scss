@@ -1,0 +1,55 @@
+.hero{
+}
+.about{
+  .about-block{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    .message__title{
+      color: #8A898E;
+      font-size: 21px;
+      margin: 0 0 5px 9px;
+    }
+    .message{
+      padding: 20px 34px 20px;
+      background: linear-gradient(0deg, #E9E9EB, #E9E9EB), #C4C4C4;
+      border-radius: 30px;
+      margin-bottom: 5px;
+      position: relative;
+      span{
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: radial-gradient(73.4% 73.4% at 48.3% 50%, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0.266) 100%), linear-gradient(0deg, #000000, #000000);
+        font-size: 36px;
+        line-height: 80%;
+        font-weight: 200;
+        strong{
+          font-weight: 600;
+        }
+      }
+      .stack-list{
+        margin-top: 10px;
+        li{
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 100%;
+          margin-left: 20px;
+          padding-left: 7px;
+        }
+        li::marker{
+          content: url('../../images/list.png');
+        }
+      }
+    }
+    .message:nth-child(4){
+      padding-bottom: 35px;
+    }
+    .message:nth-child(4)::before{
+      position: absolute;
+      content: url('../../images/corner.png');
+      bottom:-1px;
+      left:-10px;
+    }
+  }
+}

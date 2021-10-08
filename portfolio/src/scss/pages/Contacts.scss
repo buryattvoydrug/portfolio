@@ -1,0 +1,22 @@
+.contacts{
+  .contacts-block{
+    .contacts__subtitle{
+      font-size: 36px;
+      max-width: 500px;
+      line-height: 80%;
+      padding: 0 0 20px 15px;
+    }
+    .doc{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 710px;
+      height: 170px;
+      padding: 0 25px;
+      background: rgba(255, 255, 255, 0.5);
+      box-shadow: 0px 5.90967px 6.27903px rgba(0, 0, 0, 0.2), inset 0px 1.55129px 0.443225px rgba(255, 255, 255, 0.3), inset 0px -1.47742px 0.369354px rgba(255, 255, 255, 0.23);
+      backdrop-filter: blur(18.4677px);
+      border-radius: 44.618px;
+    }
+  }
+}
