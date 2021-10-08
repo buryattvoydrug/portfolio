@@ -12,14 +12,71 @@ li{
 }
 .global-wrapper{
   background: #000;
+  .ball{
+    z-index: 2;
+    background: #FFFFFF03;
+    border-radius: 1000px;
+    width: 100px;
+    height: 100px;
+    border-radius: 1000px;
+    backdrop-filter: blur(100px);
+  }
+  .first__ball{
+    width: 43vw;
+    height: 44vw;
+    background: rgba(255, 255, 255, 0.01);
+    box-shadow: inset 0px 40px 56px -36px rgba(255, 255, 255, 0.5), inset 0px 7px 11px -4px rgba(255, 255, 255, 0.5), inset 0px 114px 100px -48px rgba(255, 255, 255, 0.3), inset 0px 4px 18px rgba(154, 146, 210, 0.3), inset 0px 4px 40px rgba(227, 222, 255, 0.2);
+    transform: rotate(-15deg);
+    position: fixed;
+    top: 8vh;
+    left:-15vw;
+  }
+  .second__ball{
+    position: fixed;
+    top: 20vh;
+    left:22vw;
+    width: 12vw;
+    height: 12vw;
+    background: rgba(255, 255, 255, 0.01);
+    box-shadow: inset 0px 40px 56px -36px rgba(255, 255, 255, 0.5), inset 0px 7px 11px -4px rgba(255, 255, 255, 0.5), inset 0px 114px 100px -48px rgba(255, 255, 255, 0.3), inset 0px 4px 18px rgba(154, 146, 210, 0.3), inset 0px 4px 40px rgba(227, 222, 255, 0.2);
+  }
+  .third__ball{
+    position: fixed;
+    bottom: -25vh;
+    right:15vw;
+    width: 51vw;
+    height: 52vw;
+    box-shadow: inset 0px 40px 56px -36px rgba(255, 255, 255, 0.5), inset 0px 7px 11px -4px rgba(255, 255, 255, 0.5), inset 0px 114px 100px -48px rgba(255, 255, 255, 0.3), inset 0px 4px 18px rgba(154, 146, 210, 0.3), inset 0px 4px 40px rgba(227, 222, 255, 0.2);
+  }
+  .fourth__ball{
+    position: fixed;
+    z-index: 1;
+    top:-30%;
+    right:-10vw;
+    width: 37vw;
+    height: 38vw;
+    box-shadow: inset 0px 40px 56px -36px rgba(255, 255, 255, 0.5), inset 0px 7px 11px -4px rgba(255, 255, 255, 0.5), inset 0px 114px 100px -48px rgba(255, 255, 255, 0.3), inset 0px 4px 18px rgba(154, 146, 210, 0.3), inset 0px 4px 40px rgba(227, 222, 255, 0.2);
+  }
 }
+.global-wrapper::before{
+  content: url('../images/shadow.png');
+  position: fixed;
+  top:0;
+  left:0;
+}
+.container{
+  position: relative;
+  width: 1400px;
+  margin: 0 auto;
+}
+
 .title{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: radial-gradient(73.4% 73.4% at 48.3% 50%, rgba(239, 241, 255, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), linear-gradient(0deg, rgba(61, 61, 61, 0.63), rgba(61, 61, 61, 0.63));
   font-size: 96px;
   font-weight: bold;
-  text-shadow: 0px 2.68421px 18.7895px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 2.68421px 18.7895px rgba(0, 0, 0, 0.25),0px 2.6842105388641357px 138.90789794921875px 0px #FFFFFF40 inset;
 
 }
 .subtitle{
@@ -29,4 +86,18 @@ li{
   text-shadow: 0px 2.68421px 18.7895px rgba(0, 0, 0, 0.25);
   font-weight: 600;
   font-size: 36px;
+}
+.to-scroll{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 10;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+  .to-scroll__text{
+    padding: 20px 0 20px 100px;
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    opacity: 0.5;
+  }
 }

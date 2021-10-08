@@ -3,8 +3,6 @@ import '../scss/pages/Hero.scss'
 export default function Hero() {
   return (
     <>
-      <div className="wrapper">
-        <div className="container">
           <section className="hero">
             <div className="hero-block">
               <h1 className="hero__title title">Игорь Радимов</h1>
@@ -12,6 +10,7 @@ export default function Hero() {
             </div>
           </section>
           <section className="about">
+            <h2 className="about__title title">Обо мне</h2>
             <div className="about-block">
               <span className="message__title">Игорь веб-разработчик</span>
               <div className="message"><span><strong>Привет, я -</strong> Игорь.</span></div>
@@ -25,13 +24,10 @@ export default function Hero() {
                 </ul>
               </div>
             </div>
-            <h2 className="about__title title">Обо мне</h2>
           </section>
           <section className="main-photo">
             <img src="images/hero.png" alt="Игорь Радимов" />
           </section>
-        </div>
-      </div>
     </>
   )
 }

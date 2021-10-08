@@ -1,5 +1,12 @@
 .contacts{
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100vh;
+  position: relative;
+  z-index: 3;
+  padding-bottom: 60px;
   .contacts-block{
+    padding-bottom: 40px;
     .contacts__subtitle{
       font-size: 36px;
       max-width: 500px;

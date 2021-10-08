@@ -3,9 +3,8 @@ import '../scss/pages/Contacts.scss'
 export default function Contacts() {
   return (
     <>
-      <div className="wrapper">
-        <div className="container">
           <section className="contacts">
+            <h2 className="about__title title">Контакты</h2>
             <div className="contacts-block">
               <h3 className="contacts__subtitle subtitle">Свяжитесь со мной любым удобным Вам способом.</h3>
               <div className="doc">
@@ -26,10 +25,7 @@ export default function Contacts() {
                 </a>
               </div>
             </div>
-            <h2 className="about__title title">Контакты</h2>
           </section>
-        </div>
-      </div>
     </>
   )
 }
