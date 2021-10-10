@@ -101,3 +101,23 @@ li{
     opacity: 0.5;
   }
 }
+@media(max-width:1024px){
+  .title{
+    font-size: 62px;
+    max-width: 300px;
+  }
+  .subtitle{
+    font-size: 22px;
+  }
+  .container{
+    overflow-x: hidden;
+    width: 90vw;
+    margin: 0 5vw;
+  }
+  .to-scroll{
+    .to-scroll__text{
+      padding: 20px 0 20px 0;
+      font-size: 12px;
+    }
+  }
+}

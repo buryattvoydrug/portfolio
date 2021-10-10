@@ -11,3 +11,19 @@
     justify-content: space-between;
   }
 }
+@media(max-width:1024px){
+  .portfolio{
+    .portfolio__title{
+      position: absolute;
+      font-size: 48px;
+      text-align: right;
+      right:0;
+    }
+    .portfolio-list{
+      padding-top: 70px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}

@@ -27,3 +27,39 @@
     }
   }
 }
+@media(max-width:1024px){
+  .contacts{
+    .about__title{
+      position: absolute;
+      right:0;
+      bottom: 15px;
+      right:10px;
+      font-size: 48px !important;
+    }
+    .contacts-block{
+      padding-bottom: 10vh;
+      .contacts__subtitle{
+        float: right;
+        font-size: 22px;
+        max-width: 245px;
+        text-align: right;
+        padding: 0 0 20px 0;
+        margin-right: 10px;
+      }
+      .doc{
+        float: right;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 250px;
+        height: 170px;
+        padding: 13px 15px;
+        border-radius: 22px;
+        margin-right: 10px;
+        .doc__img{
+          padding: 0 4px;
+          height: 65px;
+        }
+      }
+    }
+  }
+}
