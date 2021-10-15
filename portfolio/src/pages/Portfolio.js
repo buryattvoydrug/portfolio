@@ -4,7 +4,7 @@ import '../scss/pages/Portfolio.scss'
 export default function Portfolio() {
   return (
     <>
-      <section className="portfolio">
+      <section className="portfolio scroll-page">
         <h2 className="portfolio__title title">Портфолио</h2>
         <div className="portfolio-list">
           <Item size={'large'}/>

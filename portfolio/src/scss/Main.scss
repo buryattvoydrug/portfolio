@@ -10,54 +10,7 @@ a{
 li{
   list-style-type: none;
 }
-.global-wrapper{
-  background: #000;
-  .ball{
-    z-index: 2;
-    background: #FFFFFF03;
-    border-radius: 1000px;
-    width: 100px;
-    height: 100px;
-    border-radius: 1000px;
-    backdrop-filter: blur(100px);
-  }
-  .first__ball{
-    width: 43vw;
-    height: 44vw;
-    background: rgba(255, 255, 255, 0.01);
-    box-shadow: inset 0px 40px 56px -36px rgba(255, 255, 255, 0.5), inset 0px 7px 11px -4px rgba(255, 255, 255, 0.5), inset 0px 114px 100px -48px rgba(255, 255, 255, 0.3), inset 0px 4px 18px rgba(154, 146, 210, 0.3), inset 0px 4px 40px rgba(227, 222, 255, 0.2);
-    transform: rotate(-15deg);
-    position: fixed;
-    top: 8vh;
-    left:-15vw;
-  }
-  .second__ball{
-    position: fixed;
-    top: 20vh;
-    left:22vw;
-    width: 12vw;
-    height: 12vw;
-    background: rgba(255, 255, 255, 0.01);
-    box-shadow: inset 0px 40px 56px -36px rgba(255, 255, 255, 0.5), inset 0px 7px 11px -4px rgba(255, 255, 255, 0.5), inset 0px 114px 100px -48px rgba(255, 255, 255, 0.3), inset 0px 4px 18px rgba(154, 146, 210, 0.3), inset 0px 4px 40px rgba(227, 222, 255, 0.2);
-  }
-  .third__ball{
-    position: fixed;
-    bottom: -25vh;
-    right:15vw;
-    width: 51vw;
-    height: 52vw;
-    box-shadow: inset 0px 40px 56px -36px rgba(255, 255, 255, 0.5), inset 0px 7px 11px -4px rgba(255, 255, 255, 0.5), inset 0px 114px 100px -48px rgba(255, 255, 255, 0.3), inset 0px 4px 18px rgba(154, 146, 210, 0.3), inset 0px 4px 40px rgba(227, 222, 255, 0.2);
-  }
-  .fourth__ball{
-    position: fixed;
-    z-index: 1;
-    top:-30%;
-    right:-10vw;
-    width: 37vw;
-    height: 38vw;
-    box-shadow: inset 0px 40px 56px -36px rgba(255, 255, 255, 0.5), inset 0px 7px 11px -4px rgba(255, 255, 255, 0.5), inset 0px 114px 100px -48px rgba(255, 255, 255, 0.3), inset 0px 4px 18px rgba(154, 146, 210, 0.3), inset 0px 4px 40px rgba(227, 222, 255, 0.2);
-  }
-}
+
 .global-wrapper::before{
   content: url('../images/shadow.png');
   position: fixed;
@@ -68,8 +21,17 @@ li{
   position: relative;
   width: 1400px;
   margin: 0 auto;
+  
 }
-
+// .scroll-container{
+//   height: 100vh;
+//   overflow-y: scroll;
+//   scroll-snap-type: y mandatory;
+//   .scroll-page{
+//     scroll-snap-align: start;
+//   }
+// }
+::-webkit-scrollbar { width: 0 !important }
 .title{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

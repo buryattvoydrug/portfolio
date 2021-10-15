@@ -3,7 +3,7 @@ import '../scss/pages/Contacts.scss'
 export default function Contacts() {
   return (
     <>
-          <section className="contacts">
+          <section className="contacts scroll-page">
             <h2 className="about__title title">Контакты</h2>
             <div className="contacts-block">
               <h3 className="contacts__subtitle subtitle">Свяжитесь со мной любым удобным Вам способом.</h3>
