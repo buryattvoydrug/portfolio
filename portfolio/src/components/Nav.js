@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import '../scss/components/Nav.scss'
 import {isMobile} from 'react-device-detect'
+import { useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 
 export default function Nav() {
+  const location = useLocation();
+
   const [menu,setMenu]=useState(false)
   const toggleMenu=()=>{
     setMenu(!menu);
@@ -16,7 +20,6 @@ export default function Nav() {
     setMenu(false);
     document.body.style.overflowY = "scroll";
   }
-  console.log(menu)
   return (
     <>
     {isMobile && 
@@ -33,11 +36,11 @@ export default function Nav() {
             <a href="/"><img src="/images/GitHub.png" alt="" /> </a>
             <a href="/"><img src="/images/Behance.png" alt="" /> </a>
           </div>
-          <ul className="nav-list subtitle">
-            <li><a href='/'>Обо мне</a></li>
-            <li><a href='/'>Портфолио</a></li>
-            <li><a href='/'>Контакты</a></li>
-          </ul>
+          {(location.pathname!="/portfolio" || isMobile) && <ul className="nav-list subtitle">
+            <li><Link to='/about'>Обо мне</Link></li>
+            <li><Link to='/portfolio'>Портфолио</Link></li>
+            <li><Link to='/contacts'>Контакты</Link></li>
+          </ul>}
       </div>
     </nav>}
     </>

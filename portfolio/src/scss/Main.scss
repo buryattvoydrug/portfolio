@@ -4,6 +4,12 @@
   box-sizing: border-box;
   font-family: 'SF Pro Display';
 }
+html {
+  scroll-behavior: smooth;
+}
+body{
+  background: #000;
+}
 a{
   text-decoration: none;
 }
@@ -23,14 +29,6 @@ li{
   margin: 0 auto;
   
 }
-// .scroll-container{
-//   height: 100vh;
-//   overflow-y: scroll;
-//   scroll-snap-type: y mandatory;
-//   .scroll-page{
-//     scroll-snap-align: start;
-//   }
-// }
 ::-webkit-scrollbar { width: 0 !important }
 .title{
   -webkit-background-clip: text;

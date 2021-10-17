@@ -5,9 +5,10 @@ import './scss/Fonts.scss'
 import Contacts from "./pages/Contacts";
 import Nav from "./components/Nav";
 import Portfolio from "./pages/Portfolio";
+import About from "./pages/About";
 
 function App() {
-
+ 
   return (
     <>
       <div className="global-wrapper">
@@ -17,14 +18,15 @@ function App() {
             <span className="to-scroll__text title">листайте вниз</span>
           </div>
         </div>
-        {/* <div className="ball first__ball"></div>
+        <div className="ball first__ball"></div>
           <div className="ball second__ball"></div>
           <div className="ball third__ball"></div>
-          <div className="ball fourth__ball"></div> */}
+          <div className="ball fourth__ball"></div>
         <div className="container scroll-container">
-            <Hero/>
-            <Portfolio/>
-            <Contacts/>
+          <Hero/>
+          <About/>
+          <Portfolio/>
+          <Contacts/>
         </div>
       </div>
     </>

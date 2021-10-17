@@ -1,8 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { CSSTransition } from 'react-transition-group'
 import '../scss/components/Item.scss'
-export default function Item({size}) {
+export default function Item({size,number}) {
+  const [show, setShow] = useState(false)
+  // setTimeout(()=>setShow(true),500)
+  let item=document.getElementsByClassName('portfolio__title')[0]
+  // if(item){
+  //   console.log(item.getBoundingClientRect())
+  // }
+  const [scroll, setScroll] = React.useState(0);
+  const handleScroll = () => {
+    setScroll(window.scrollY);
+    
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  useEffect(() => {
+    if(item && item.getBoundingClientRect().bottom<=550-(430*(number))){
+      setShow(true)
+    }
+    // console.log(300-(100*number))
+    if(item && item.getBoundingClientRect().bottom>550-(430*number)){
+      setShow(false)
+    }
+  })
   return (
     <>
+    <CSSTransition
+                  in={show}
+                  timeout={1000}
+                  classNames="trans"
+                  unmountOnExit>
       <div className={"item"+' '+size}>
         <div className="item-block">
           <span className="item__type">Работа <br />для портфолио</span>
@@ -24,6 +55,7 @@ export default function Item({size}) {
           <img src="/images/type3.png" alt="" className="item__img" />
         }
       </div>
+      </CSSTransition>
     </>
   )
 }

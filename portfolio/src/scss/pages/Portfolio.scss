@@ -1,7 +1,7 @@
 .portfolio{
   position: relative;
   z-index: 3;
-  padding-bottom: 100px;
+  padding-bottom: 400px;
   .portfolio__title{
     font-size: 72px;
   }
@@ -10,6 +10,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
+}
+.portfolio-page{
+  min-height: 100vh;
 }
 @media(max-width:1024px){
   .portfolio{
