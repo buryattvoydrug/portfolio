@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import '../scss/components/Nav.scss'
 import {isMobile} from 'react-device-detect'
 import { useLocation } from 'react-router';
-import { Link } from 'react-router-dom';
 
 export default function Nav() {
-  const location = useLocation();
 
   const [menu,setMenu]=useState(false)
   const toggleMenu=()=>{
@@ -19,6 +17,12 @@ export default function Nav() {
   const closeMenu = () => {
     setMenu(false);
     document.body.style.overflowY = "scroll";
+  }
+  function scrollToBottom (){
+    window.scrollTo(0,10000)
+    setTimeout(()=>window.scrollTo(0,10000),600)
+    setTimeout(()=>window.scrollTo(0,10000),1200)
+    setTimeout(()=>window.scrollTo(0,10000),1800)
   }
   return (
     <>
@@ -36,11 +40,11 @@ export default function Nav() {
             <a href="/"><img src="/images/GitHub.png" alt="" /> </a>
             <a href="/"><img src="/images/Behance.png" alt="" /> </a>
           </div>
-          {(location.pathname!="/portfolio" || isMobile) && <ul className="nav-list subtitle">
-            <li><Link to='/about'>Обо мне</Link></li>
-            <li><Link to='/portfolio'>Портфолио</Link></li>
-            <li><Link to='/contacts'>Контакты</Link></li>
-          </ul>}
+          <ul className="nav-list subtitle">
+            <li><a className="link" href='#hero'>Обо мне</a></li>
+            <li><a className="link" href='#portfolio'>Портфолио</a></li>
+            <li onClick={()=>scrollToBottom()}><span className="link" >Контакты</span></li>
+          </ul>
       </div>
     </nav>}
     </>

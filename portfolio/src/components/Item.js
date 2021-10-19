@@ -19,11 +19,10 @@ export default function Item({size,number}) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   useEffect(() => {
-    if(item && item.getBoundingClientRect().bottom<=550-(430*(number))){
+    if(item && item.getBoundingClientRect().bottom<=650-(430*(number))){
       setShow(true)
     }
-    // console.log(300-(100*number))
-    if(item && item.getBoundingClientRect().bottom>550-(430*number)){
+    if(item && item.getBoundingClientRect().bottom>650-(430*number)){
       setShow(false)
     }
   })
@@ -32,7 +31,7 @@ export default function Item({size,number}) {
     <CSSTransition
                   in={show}
                   timeout={1000}
-                  classNames="trans"
+                  classNames="port"
                   unmountOnExit>
       <div className={"item"+' '+size}>
         <div className="item-block">

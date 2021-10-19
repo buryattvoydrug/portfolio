@@ -29,6 +29,9 @@ li{
   margin: 0 auto;
   
 }
+.scroll-container{
+  z-index: 100;
+}
 ::-webkit-scrollbar { width: 0 !important }
 .title{
   -webkit-background-clip: text;

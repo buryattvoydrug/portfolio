@@ -28,7 +28,7 @@ export default function Contacts() {
   })
   return (
     <>
-          <section className="contacts-page scroll-page">
+          <section id="contacts" className="contacts-page scroll-page">
             <CSSTransition
                   in={show}
                   timeout={1000}
