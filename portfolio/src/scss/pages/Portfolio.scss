@@ -22,12 +22,15 @@
   .portfolio{
     .portfolio__title{
       position: absolute;
-      font-size: 48px;
-      text-align: right;
-      right:0;
+      font-size: 100px;
+      line-height: 60%; 
+      text-align: left;
+      left:0;
+      padding-bottom: 30px;
+      max-width: 100%;
     }
     .portfolio-list{
-      padding-top: 70px;
+      padding-top: 115px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;

@@ -2,7 +2,7 @@ nav{
   position: fixed;
   width: 100%;
   top:30px;
-  z-index: 1000;
+  z-index: 999;
   .container{
     margin: 0 auto;
     display: flex;
@@ -54,17 +54,25 @@ nav{
   }
 }
 @media(max-width:1024px){
+  .nav-button{
+    z-index: 1000;
+  }
   nav{
-    backdrop-filter: blur(100px);
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    // background: #000;
     top:0;
-    z-index: 99;
-    .container{
+    .nav-container{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      backdrop-filter: blur(100px);
+      width: 100%;
       height: 100%;
+      z-index: 999;
+      padding: 20px;
     }
+    
     .buttons{
       position: absolute;
       bottom:10px;

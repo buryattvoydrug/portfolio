@@ -129,12 +129,13 @@
   }
   .about{
     padding-left: 0px;
+    position: relative;
     .about__title{
       position: absolute;
-      right:0;
       bottom: 15px;
-      right:10px;
-      font-size: 48px !important;
+      right:auto;
+      left:10px;
+      font-size: 48px;
     }
     .about-block{
       // padding-bottom: 15vh;

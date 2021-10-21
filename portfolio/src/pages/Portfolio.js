@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import Item from '../components/Item'
 import '../scss/pages/Portfolio.scss'
+import {isMobile} from 'react-device-detect'
+
 export default function Portfolio() {
   const [show, setShow] = useState(false)
   // setTimeout(()=>setShow(true),500)
@@ -38,16 +40,20 @@ export default function Portfolio() {
                   classNames="port"
                   unmountOnExit>
                     <div className="">
-                      <h2 className="portfolio__title title">Портфолио</h2>
+                      {isMobile?
+                        <h2 className="portfolio__title title">Порт фолио</h2>
+                      :
+                        <h2 className="portfolio__title title">Портфолио</h2>
+                      }
                     </div>
                   </CSSTransition>
             <div className="portfolio-list">
               <Item number={0} size={'large'}/>
               <Item number={1} size={'medium'}/>
-              <Item number={1} size={'small'}/>
-              <Item number={2} size={'small'}/>
-              <Item number={2} size={'medium'}/>
-              <Item number={3} size={'large'}/>
+              <Item number={isMobile? 2: 1} size={'small'}/>
+              <Item number={isMobile? 3 : 2} size={'small'}/>
+              <Item number={isMobile? 4 : 2} size={'medium'}/>
+              <Item number={isMobile? 5 : 3} size={'large'}/>
             </div>
           </div>
       </section>

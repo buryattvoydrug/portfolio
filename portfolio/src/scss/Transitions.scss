@@ -16,6 +16,25 @@
   transition: opacity 300ms, transform 300ms;
 }
 
+.nav-enter {
+  opacity: 0;
+  backdrop-filter: blur(10px);
+}
+.nav-enter-active {
+  opacity: 1;
+  backdrop-filter: blur(100px);
+  transition:  .7s;
+}
+.nav-exit {
+  opacity: 1;
+  backdrop-filter: blur(100px);
+}
+.nav-exit-active {
+  opacity: 0;
+  backdrop-filter: blur(10px);
+  transition:  0.5s;
+}
+
 .popup-enter {
   opacity: 0;
 }

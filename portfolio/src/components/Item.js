@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import '../scss/components/Item.scss'
+import {isMobile} from 'react-device-detect'
+
 export default function Item({size,number}) {
   const [show, setShow] = useState(false)
   // setTimeout(()=>setShow(true),500)
@@ -13,16 +15,23 @@ export default function Item({size,number}) {
     setScroll(window.scrollY);
     
   };
+  let heightCard=430
+  let heightTitle=800
+  if(isMobile){
+    heightCard=360
+    heightTitle=550
 
+  }
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   useEffect(() => {
-    if(item && item.getBoundingClientRect().bottom<=650-(430*(number))){
+    if(item && item.getBoundingClientRect().bottom<=heightTitle-(heightCard*(number))){
+      console.log(item.getBoundingClientRect().bottom)
       setShow(true)
     }
-    if(item && item.getBoundingClientRect().bottom>650-(430*number)){
+    if(item && item.getBoundingClientRect().bottom>heightTitle-(heightCard*number)){
       setShow(false)
     }
   })
