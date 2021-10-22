@@ -2,13 +2,16 @@ import React, { useState } from 'react'
 import '../scss/pages/Hero.scss'
 import '../scss/Transitions.scss'
 import { CSSTransition } from 'react-transition-group';
+import Photo from './Photo';
 
 export default function Hero() {
+  console.log(window.innerWidth)
   const [show, setShow] = useState(false)
   setTimeout(()=>setShow(true),500)
   return (
     <>
           <section id="hero" className="hero scroll-page">
+            {window.innerWidth<1280 && <Photo/>}
             <CSSTransition
                   in={show}
                   timeout={1000}
@@ -20,9 +23,7 @@ export default function Hero() {
               </div>
             </CSSTransition>
           </section>
-          <section className="main-photo">
-            {/* <img src="images/hero.png" alt="Игорь Радимов" /> */}
-          </section>
+          
     </>
   )
 }

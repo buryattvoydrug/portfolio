@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column-reverse;
   position: relative;
-  z-index: 3;
+  z-index: 5;
   padding-left: 100px;
   padding-bottom: 60px;
   .about-block{
@@ -108,15 +108,36 @@
 }
 .main-photo{
   z-index: 3;
-  position: fixed;
-  right: 0;
-  bottom: 0;
+  position:fixed;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  img{
+    margin-top: 20vh;
+    height: 80vh;
+    float: right;
+  }
 }
-@media(max-width:1024px){
+@media (min-width:1280px) and (max-width:1440px){
+  .hero{
+    .hero-block{
+      .hero__title{
+        line-height: 80%;
+        max-width: 40vw;
+        padding-bottom: 12px;
+      }
+      .hero__subtitle{
+        padding-left: 0px;
+      }
+    }
+  }
+}
+@media(max-width:1279px){
   .hero{
     padding-left: 20px;
     .hero-block{
-      padding-top: 0vh;
+      padding-top: 55vh;
       padding-bottom: 5vh;
       .hero__subtitle{
         padding-left: 0px;
@@ -169,6 +190,26 @@
     }
   }
   .main-photo{
-    display: none;
+    z-index: 4;
+    background: #FFFFFF03;
+    border-radius: 1000px;
+    width: 100px;
+    height: 100px;
+    border-radius: 1000px;
+    backdrop-filter: blur(100px);
+    position:absolute;
+    top:10%;
+    box-shadow: inset 0px 40px 56px -36px rgba(255, 255, 255, 0.5), inset 0px 7px 11px -4px rgba(255, 255, 255, 0.5), inset 0px 114px 100px -48px rgba(255, 255, 255, 0.3), inset 0px 4px 18px rgba(154, 146, 210, 0.3), inset 0px 4px 40px rgba(227, 222, 255, 0.2);
+    //
+    right:-40vw;
+    margin: 0 auto;
+    width:  350px;
+    height: 350px;
+    overflow: hidden;
+    img{
+      margin-top: 20px;
+      height: 100%;
+      // min-width: 100%;
+    }
   }
 }

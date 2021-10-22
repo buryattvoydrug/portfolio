@@ -8,6 +8,7 @@ import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import { useEffect, useState } from "react";
 import { CSSTransition } from "react-transition-group";
+import Photo from "./pages/Photo";
 
 function App() {
   const [show, setShow] = useState(true)
@@ -66,6 +67,15 @@ function App() {
           <div className="ball second__ball"></div>
           <div className="ball third__ball"></div>
           <div className="ball fourth__ball"></div>
+          {window.innerWidth>=1280 &&
+          <CSSTransition
+                  in={show2}
+                  timeout={1000}
+                  classNames="hero"
+                  unmountOnExit>
+             <Photo/>
+          </CSSTransition>
+          }
           <div className="container scroll-container">
               <Hero/>
               <About/>

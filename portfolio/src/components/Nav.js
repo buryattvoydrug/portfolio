@@ -16,7 +16,7 @@ export default function Nav() {
   }
   
   function scrollToBottom (){
-    if(isMobile){
+    if(window.innerWidth<=1024){
       toggleMenu()
     }
     window.scrollTo(0,10000)
@@ -26,7 +26,7 @@ export default function Nav() {
   }
   return (
     <>
-    {isMobile && 
+    {window.innerWidth<=1024 && 
       <button onClick={toggleMenu} className={menu? 'active__button nav-button': 'nav-button'}>
               <span></span>
               <span></span>
@@ -35,11 +35,11 @@ export default function Nav() {
     }
     <nav>
       <CSSTransition
-                  in={menu || !isMobile}
+                  in={menu || window.innerWidth>1024}
                   timeout={1000}
                   classNames="nav"
                   unmountOnExit>
-      <div className={isMobile? "nav-container" : "container"}>
+      <div className={window.innerWidth<=1024? "nav-container" : "container"}>
           <div className="buttons">
             <a href="/"><img src="/images/GitHub.png" alt="" /> </a>
             <a href="/"><img src="/images/Behance.png" alt="" /> </a>

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import '../scss/components/Item.scss'
 import '../scss/components/Popup.scss'
-import {isMobile} from 'react-device-detect'
 import Popup from './Popup'
 
 export default function Item({size,number}) {
@@ -19,7 +18,7 @@ export default function Item({size,number}) {
   };
   let heightCard=430
   let heightTitle=800
-  if(isMobile){
+  if(window.innerWidth<768){
     heightCard=360
     heightTitle=550
 
@@ -30,7 +29,7 @@ export default function Item({size,number}) {
   }, []);
   useEffect(() => {
     if(item && item.getBoundingClientRect().bottom<=heightTitle-(heightCard*(number))){
-      console.log(item.getBoundingClientRect().bottom)
+      // console.log(item.getBoundingClientRect().bottom)
       setShow(true)
     }
     if(item && item.getBoundingClientRect().bottom>heightTitle-(heightCard*number)){

@@ -5,22 +5,9 @@ import { CSSTransition } from 'react-transition-group';
 
 
 function Popup({ispopup}) {
-  const [popup,setPopup]=useState(false)
-  setTimeout(()=>setPopup(true),1300)
-
-
-  function hide() {
-    let popupWrapper=document.getElementsByClassName('popup-wrapper')[0]
-    popupWrapper.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-    popupWrapper.classList.add('unblur')
-    setTimeout(()=>setPopup(false),300)
-  }
-  return (
+    return (
     <>
-         <div className="popup" onClick={(e)=>e.stopPropagation()}>
+         <div className="popup">
           <div className="todo-block">
             <div className="todo">
               <h3 className="todo__title">Задача</h3>

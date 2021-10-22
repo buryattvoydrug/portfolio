@@ -18,6 +18,13 @@
   padding-top: 50vh;
   min-height: 100vh;
 }
+@media (min-width:1280px) and (max-width:1440px){
+  .portfolio{
+    .portfolio__title{
+      font-size: 200px;
+    }
+  }
+}
 @media(max-width:1024px){
   .portfolio{
     .portfolio__title{
