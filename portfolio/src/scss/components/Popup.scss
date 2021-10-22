@@ -17,6 +17,16 @@
   width: 0;
   height: 0;
 }
+.close{
+  cursor: pointer;
+  position: sticky;
+  top:20px;
+  right:20px;
+  float: right;
+  img{
+    height: 30px;
+  }
+}
 .popup-wrapper{
   position: fixed;
   top:0;
@@ -183,9 +193,17 @@
   }
 }
 @media(max-width:1279px){
+  .close{
+    top:20px;
+    right:20px;
+    z-index: 1002;
+    img{
+      height: 30px;
+    }
+  }
   .popup-wrapper{
     .popup{
-      margin: 50px auto;
+      margin: 10px auto 50px;
       width: 100%;
       padding: 0 10%;
       overflow-x: hidden;

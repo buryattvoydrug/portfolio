@@ -39,7 +39,14 @@ export default function Item({size,number}) {
   })
 
   const [popup,setPopup]=useState(false)
-
+  const togglePopup=()=>{
+    setPopup(!popup);
+    if (document.body.style.overflowY !== "hidden") {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "scroll";
+    }
+  }
   return (
     <>
     <CSSTransition
@@ -54,7 +61,9 @@ export default function Item({size,number}) {
                 classNames="popup"
                 unmountOnExit>
                 <div className="popup-wrapper">
-                  <div className="close" onClick={()=>setPopup(false)}>Закрыть</div>
+                  <div className="close" onClick={togglePopup}>
+                    <img src="/images/CLOSE.png" alt=""/>
+                  </div>
                   <Popup/>
                 </div>
       </CSSTransition>
@@ -66,7 +75,7 @@ export default function Item({size,number}) {
             <li>MERN stack</li>
             <li>Дизайн</li>
           </ul>
-          <button className="item__button" onClick={()=>setPopup(true)}>Подробнее</button>
+          <button className="item__button" onClick={togglePopup}>Подробнее</button>
         </div>
         {size==="large" && 
           <img src="/images/type1.png" alt="" className="item__img" />
