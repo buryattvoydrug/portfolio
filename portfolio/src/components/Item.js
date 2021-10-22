@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import '../scss/components/Item.scss'
+import '../scss/components/Popup.scss'
 import {isMobile} from 'react-device-detect'
+import Popup from './Popup'
 
 export default function Item({size,number}) {
   const [show, setShow] = useState(false)
@@ -35,6 +37,9 @@ export default function Item({size,number}) {
       setShow(false)
     }
   })
+
+  const [popup,setPopup]=useState(false)
+
   return (
     <>
     <CSSTransition
@@ -43,6 +48,16 @@ export default function Item({size,number}) {
                   classNames="port"
                   unmountOnExit>
       <div className={"item"+' '+size}>
+      <CSSTransition
+                in={popup}
+                timeout={1000}
+                classNames="popup"
+                unmountOnExit>
+                <div className="popup-wrapper">
+                  <div className="close" onClick={()=>setPopup(false)}>Закрыть</div>
+                  <Popup/>
+                </div>
+      </CSSTransition>
         <div className="item-block">
           <span className="item__type">Работа <br />для портфолио</span>
           <h3 className="item__title">Промо-сайт Audi</h3>
@@ -51,7 +66,7 @@ export default function Item({size,number}) {
             <li>MERN stack</li>
             <li>Дизайн</li>
           </ul>
-          <button className="item__button">Подробнее</button>
+          <button className="item__button" onClick={()=>setPopup(true)}>Подробнее</button>
         </div>
         {size==="large" && 
           <img src="/images/type1.png" alt="" className="item__img" />
