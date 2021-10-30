@@ -9,16 +9,16 @@ export default function About() {
   // if(item){
     // console.log(item.getBoundingClientRect())
   // }
-  const [scroll, setScroll] = React.useState(0);
-  const handleScroll = () => {
-    setScroll(window.scrollY);
+  // const [scroll, setScroll] = React.useState(0);
+  // const handleScroll = () => {
+  //   setScroll(window.scrollY);
     
-  };
+  // };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
   useEffect(() => {
     if(item && item.getBoundingClientRect().bottom<=300){
       setShow(true)

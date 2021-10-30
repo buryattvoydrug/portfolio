@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import '../scss/components/Nav.scss'
-import {isMobile} from 'react-device-detect'
 import { CSSTransition } from 'react-transition-group'
 
 export default function Nav() {

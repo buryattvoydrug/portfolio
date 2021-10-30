@@ -11,11 +11,11 @@ export default function Item({size,number}) {
   // if(item){
   //   console.log(item.getBoundingClientRect())
   // }
-  const [scroll, setScroll] = React.useState(0);
-  const handleScroll = () => {
-    setScroll(window.scrollY);
+  // const [scroll, setScroll] = React.useState(0);
+  // const handleScroll = () => {
+  //   setScroll(window.scrollY);
     
-  };
+  // };
   let heightCard=430
   let heightTitle=800
   if(window.innerWidth<768){
@@ -23,10 +23,10 @@ export default function Item({size,number}) {
     heightTitle=550
 
   }
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
   useEffect(() => {
     if(item && item.getBoundingClientRect().bottom<=heightTitle-(heightCard*(number))){
       // console.log(item.getBoundingClientRect().bottom)

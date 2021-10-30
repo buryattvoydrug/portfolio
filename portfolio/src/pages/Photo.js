@@ -5,10 +5,10 @@ export default function Photo() {
     <>
       <section className="main-photo">
         {window.innerWidth<1280 ?
-          <img src="images/hero.png" alt="Игорь Радимов" />
+          <img src="images/herom.webp" alt="Игорь Радимов" />
         :
         <div className="container">
-          <img src="images/hero.png" alt="Игорь Радимов" />
+          <img src="images/hero.webp" alt="Игорь Радимов" />
         </div>}
       </section>
     </>
