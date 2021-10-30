@@ -1,5 +1,5 @@
 .item{
-  background: green;
+  // background: green;
   border-radius: 50px;
   margin: 0.5%;
   position: relative;
@@ -89,22 +89,40 @@
   }
 }
 .item:nth-child(1n){
-  background: url('../../images/bg1.png');
+  background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right bottom, rgba(231, 76, 60, .8), rgba(0, 0, 0, .8));  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right bottom, rgba(231, 76, 60, .8), rgba(0, 0, 0, .8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .item:nth-child(2n){
-  background: url('../../images/bg2.png');
+  background: #093028;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right bottom, rgba(35, 122, 87, .8), rgba(9, 48, 40, .8));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right bottom, rgba(35, 122, 87, .8), rgba(9, 48, 40, .8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
+
 .item:nth-child(3n){
-  background: url('../../images/bg3.png');
+  background: #6D6027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, rgba(211, 203, 184, .8), rgba(109, 96, 39, .8));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, rgba(211, 203, 184, .8), rgba(109, 96, 39, .8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 .item:nth-child(4n){
-  background: url('../../images/bg4.png');
+  background: #2c3e50;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left top, rgba(52, 152, 219, .8),rgba(44, 62, 80, .8) );  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left top, rgba(52, 152, 219, .8),rgba(44, 62, 80, .8) ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .item:nth-child(5n){
-  background: url('../../images/bg5.png');
+  background: #1e130c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left bottom, rgba(154, 132, 120, .8), rgba(30, 19, 12, .8));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left bottom, rgba(154, 132, 120, .8), rgba(30, 19, 12, .8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .item:nth-child(6n){
-  background: url('../../images/bg6.png');
+  background: #FF4E50;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, rgba(249, 212, 35, .8), rgba(255, 78, 80, .8));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, rgba(249, 212, 35, .8), rgba(255, 78, 80, .8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .item:hover{
   .item__img{
