@@ -120,6 +120,9 @@
           color:#000;
           position: relative;
           padding-left: 50px;
+          background: #000;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       }
       .title__img{

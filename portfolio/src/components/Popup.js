@@ -1,7 +1,5 @@
 import React from 'react'
-import { useState } from 'react/cjs/react.development'
 import '../scss/components/Popup.scss'
-import { CSSTransition } from 'react-transition-group';
 
 
 function Popup({ispopup}) {

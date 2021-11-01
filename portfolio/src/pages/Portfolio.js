@@ -5,30 +5,26 @@ import '../scss/pages/Portfolio.scss'
 
 export default function Portfolio() {
   const [show, setShow] = useState(false)
-  // setTimeout(()=>setShow(true),500)
-  let item=document.querySelector('.portfolio-page')
-  let clientHeight=document.documentElement.clientHeight
-  // if(item){
-    // console.log(item.getBoundingClientRect())
-  // }
-  // const [scroll, setScroll] = React.useState(0);
-  // const handleScroll = () => {
-  //   setScroll(window.scrollY);
-    
-  // };
+  const [item, setItem] = useState(null)
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
   useEffect(() => {
+    setItem(document.querySelector('.portfolio-page'))
+  },[item])
+  const handleScroll = () => {
     if(item && item.getBoundingClientRect().top<=0){
       setShow(true)
     }
     if(item && item.getBoundingClientRect().top>0){
       setShow(false)
     }
-  })
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+  console.log('rerPortfolio')
+  
   return (
     <>
       <section id="portfolio" className="portfolio-page">
@@ -47,12 +43,24 @@ export default function Portfolio() {
                     </div>
                   </CSSTransition>
             <div className="portfolio-list">
-              <Item number={0} size={'large'}/>
-              <Item number={1} size={'medium'}/>
-              <Item number={window.innerWidth<1280? 2: 1} size={'small'}/>
-              <Item number={window.innerWidth<1280? 3 : 2} size={'small'}/>
-              <Item number={window.innerWidth<1280? 4 : 2} size={'medium'}/>
-              <Item number={window.innerWidth<1280? 5 : 3} size={'large'}/>
+              {/* {window.innerWidth<1280?
+              <>
+                <MobileItem size={'large'}/>
+                <MobileItem size={'medium'}/>
+                <MobileItem size={'small'}/>
+                <MobileItem size={'large'}/>
+                <MobileItem size={'medium'}/>
+                <MobileItem size={'small'}/>
+
+              </>: */}
+              <>
+                <Item number={0} size={'large'}/>
+                <Item number={1} size={'medium'}/>
+                <Item number={window.innerWidth<1280? 2: 1} size={'small'}/>
+                <Item number={window.innerWidth<1280? 3 : 2} size={'small'}/>
+                <Item number={window.innerWidth<1280? 4 : 2} size={'medium'}/>
+                <Item number={window.innerWidth<1280? 5 : 3} size={'large'}/>
+              </>
             </div>
           </div>
       </section>

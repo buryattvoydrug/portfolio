@@ -3,30 +3,27 @@ import { CSSTransition } from 'react-transition-group'
 import Messages from '../components/Messages'
 export default function About() {
   const [show, setShow] = useState(false)
-  // setTimeout(()=>setShow(true),500)
-  let item=document.getElementById('hero')
-  let clientHeight=document.documentElement.clientHeight
-  // if(item){
-    // console.log(item.getBoundingClientRect())
-  // }
-  // const [scroll, setScroll] = React.useState(0);
-  // const handleScroll = () => {
-  //   setScroll(window.scrollY);
-    
-  // };
+  const [item, setItem] = useState(null)
+   useEffect(() => {
+    setItem(document.getElementById('hero'))
+    // console.log(item)
+  },[item])
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-  useEffect(() => {
+  const handleScroll = () => {
     if(item && item.getBoundingClientRect().bottom<=300){
       setShow(true)
     }
     if(item && item.getBoundingClientRect().bottom>300){
       setShow(false)
     }
-  })
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+  // console.log('rerAbout')
+  
   let myRef = useRef()
     return (
     <>

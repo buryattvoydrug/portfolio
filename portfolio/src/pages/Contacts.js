@@ -3,29 +3,27 @@ import { CSSTransition } from 'react-transition-group'
 import '../scss/pages/Contacts.scss'
 export default function Contacts() {
   const [show, setShow] = useState(false)
-  // setTimeout(()=>setShow(true),500)
-  let item=document.getElementsByClassName('portfolio-page')[0]
-  // if(item){
-  //   console.log(item.getBoundingClientRect())
-  // }
-  // const [scroll, setScroll] = React.useState(0);
-  // const handleScroll = () => {
-  //   setScroll(window.scrollY);
-    
-  // };
+  const [item, setItem] = useState(null)
+   useEffect(() => {
+    setItem(document.getElementsByClassName('portfolio-page')[0])
+    // console.log(item)
+  },[item])
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-  useEffect(() => {
+  const handleScroll = () => {
     if(item && item.getBoundingClientRect().bottom<=450){
       setShow(true)
     }
     if(item && item.getBoundingClientRect().bottom>450){
       setShow(false)
     }
-  })
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+  // console.log('Contacts')
+  
   return (
     <>
           <section id="contacts" className="contacts-page scroll-page">

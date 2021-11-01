@@ -5,7 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import Photo from './Photo';
 
 export default function Hero() {
-  console.log(window.innerWidth)
+  console.log('rerHero')
   const [show, setShow] = useState(false)
   setTimeout(()=>setShow(true),500)
   return (

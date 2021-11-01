@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import '../scss/components/Item.scss'
 import '../scss/components/Popup.scss'
@@ -6,16 +6,11 @@ import Popup from './Popup'
 
 export default function Item({size,number}) {
   const [show, setShow] = useState(false)
-  // setTimeout(()=>setShow(true),500)
-  let item=document.getElementsByClassName('portfolio__title')[0]
-  // if(item){
-  //   console.log(item.getBoundingClientRect())
-  // }
-  // const [scroll, setScroll] = React.useState(0);
-  // const handleScroll = () => {
-  //   setScroll(window.scrollY);
-    
-  // };
+  const [item, setItem] = useState(null)
+
+  useEffect(() => {
+    setItem(document.getElementsByClassName('portfolio__title')[0])
+  })
   let heightCard=430
   let heightTitle=800
   if(window.innerWidth<768){
@@ -23,19 +18,20 @@ export default function Item({size,number}) {
     heightTitle=550
 
   }
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-  useEffect(() => {
+  const handleScroll = () => {
     if(item && item.getBoundingClientRect().bottom<=heightTitle-(heightCard*(number))){
-      // console.log(item.getBoundingClientRect().bottom)
       setShow(true)
     }
     if(item && item.getBoundingClientRect().bottom>heightTitle-(heightCard*number)){
       setShow(false)
     }
-  })
+  };
+  
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+  
 
   const [popup,setPopup]=useState(false)
   const togglePopup=()=>{
@@ -46,6 +42,7 @@ export default function Item({size,number}) {
       document.body.style.overflowY = "scroll";
     }
   }
+
   return (
     <>
     <CSSTransition
